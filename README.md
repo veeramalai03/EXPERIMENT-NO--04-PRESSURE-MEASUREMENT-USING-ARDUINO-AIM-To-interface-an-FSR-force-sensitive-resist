@@ -59,6 +59,7 @@ The easiest way to measure a resistive sensor is to connect one end to power and
 
 
 ### FIGURE-03 CIRCUIT DIAGRAM
+![166241830-6732e218-3192-4264-9679-f640c08ecc65](https://user-images.githubusercontent.com/75234790/167697273-e4693bb3-2ffc-4a4a-9ed9-c489207bb2ea.png)
 
 
 
@@ -76,10 +77,36 @@ The easiest way to measure a resistive sensor is to connect one end to power and
 
 
 ### PROGRAM 
+ ```
+ // C++ code
+//
+int force = 0;
+
+float f = 0;
+void setup()
+{
+ pinMode(A3, INPUT);
+ pinMode(8, OUTPUT);
+ Serial.begin(9600);
+
+}
+
+void loop()
+{
+ force= analogRead(A3);
+ f = map(force,0,500,0,10);
+ //Serial.print("Force =");
+ Serial.println(f);
+ analogWrite(8, force);
+ delay(1000); // Wait for 1000 millisecond(s)
  
+}
+ ```
  
+ ### OUTPUT ###
  
- 
+ ![166480908-21d07ba6-d5b1-44e8-8133-bc21ed95dcb7](https://user-images.githubusercontent.com/75234790/167697409-dedde64d-6da9-43d8-9cee-7ce84491a051.png)
+
  
  
  
@@ -103,6 +130,7 @@ The easiest way to measure a resistive sensor is to connect one end to power and
 
 
 
+![166481089-d63f0dff-c9d7-457c-a91a-b8a361aedcaf](https://user-images.githubusercontent.com/75234790/167697502-11c7b112-f734-471b-8cf1-785ab1b30f80.png)
 
 
 
